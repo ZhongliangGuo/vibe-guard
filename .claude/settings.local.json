@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"E:\\\\Users\\\\zg34\\\\Desktop\\\\vibe-guard\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName)"
+    ]
+  }
+}

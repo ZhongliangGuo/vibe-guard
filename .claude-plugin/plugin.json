@@ -1,0 +1,24 @@
+{
+    "name": "vibe-guard",
+    "version": "1.0.0",
+    "description": "AI-aware code security auditor that detects backdoors, vulnerabilities, and malicious patterns — especially in AI-generated (vibe-coded) code. Triggers on: 'check code for security issues', 'scan for backdoors', 'audit this code', 'is this code safe', 'review security', 'vibe-guard', 'backdoor detection', 'supply chain attack', or any doubt about code trustworthiness.",
+    "author": {
+        "name": "ZhongliangGuo",
+        "url": "https://github.com/ZhongliangGuo"
+    },
+    "homepage": "https://github.com/ZhongliangGuo/vibe-guard",
+    "repository": "https://github.com/ZhongliangGuo/vibe-guard",
+    "license": "MIT",
+    "keywords": [
+        "security",
+        "backdoor-detection",
+        "vibe-coding",
+        "ai-generated-code",
+        "vulnerability-scanner",
+        "supply-chain",
+        "code-audit",
+        "static-analysis",
+        "owasp",
+        "claude-skill"
+    ]
+}
