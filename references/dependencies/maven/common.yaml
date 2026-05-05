@@ -1,0 +1,92 @@
+# Maven — Common Package Advisories
+
+- package: org.apache.logging.log4j:log4j-core
+  affected: ">=2.0,<2.17.1"
+  severity: 🔴 critical
+  cve: CVE-2021-44228 (Log4Shell)
+  description: "RCE via JNDI lookup in log messages. One of the most severe vulnerabilities in history."
+  fix: Upgrade to log4j-core>=2.17.1. Set log4j2.formatMsgNoLookups=true as interim mitigation.
+
+- package: org.apache.logging.log4j:log4j-core
+  affected: ">=2.0,<2.17.0"
+  severity: 🟠 high
+  cve: CVE-2021-45105
+  description: DoS via recursive lookup in Thread Context Map
+  fix: Upgrade to log4j-core>=2.17.0
+
+- package: com.fasterxml.jackson.databind:jackson-databind
+  affected: "<2.14.0"
+  severity: 🟠 high
+  cve: Multiple
+  description: Multiple deserialization gadget RCE vectors via polymorphic type handling
+  fix: Upgrade to jackson-databind>=2.14.0, disable default typing
+
+- package: org.springframework:spring-framework
+  affected: ">=5.3.0,<5.3.18 || >=5.2.0,<5.2.20"
+  severity: 🔴 critical
+  cve: CVE-2022-22965 (Spring4Shell)
+  description: RCE via data binding on JDK 9+ with Tomcat
+  fix: Upgrade to spring-framework>=5.3.18
+
+- package: org.springframework.security:spring-security
+  affected: "<5.8.9 || >=6.0,<6.1.7"
+  severity: 🟠 high
+  cve: CVE-2023-52428
+  description: Authorization bypass in certain URL patterns
+  fix: Upgrade to spring-security>=5.8.9 or >=6.1.7
+
+- package: org.apache.struts:struts2-core
+  affected: ">=2.0,<2.5.33 || >=6.0,<6.3.0.2"
+  severity: 🔴 critical
+  cve: CVE-2023-50164
+  description: Path traversal via file upload parameter manipulation leading to RCE
+  fix: Upgrade to struts2>=2.5.33 or >=6.3.0.2
+
+- package: com.google.code.gson:gson
+  affected: "<2.8.9"
+  severity: 🟡 medium
+  cve: CVE-2022-25647
+  description: DoS via deeply nested JSON
+  fix: Upgrade to gson>=2.8.9
+
+- package: org.apache.commons:commons-text
+  affected: ">=1.5,<1.10.0"
+  severity: 🔴 critical
+  cve: CVE-2022-42889 (Text4Shell)
+  description: RCE via string interpolation (StringSubstitutor with script/dns/url lookups)
+  fix: Upgrade to commons-text>=1.10.0
+
+- package: io.netty:netty-codec-http
+  affected: "<4.1.86"
+  severity: 🟡 medium
+  cve: CVE-2022-41881
+  description: HTTP request smuggling via incorrect content-length parsing
+  fix: Upgrade to netty>=4.1.86
+
+- package: com.h2database:h2
+  affected: "<2.1.210"
+  severity: 🔴 critical
+  cve: CVE-2021-42392
+  description: RCE via JNDI in H2 console (similar to Log4Shell)
+  fix: Upgrade to h2>=2.1.210, disable H2 console in production
+
+- package: org.apache.tomcat.embed:tomcat-embed-core
+  affected: "<9.0.83 || >=10.0,<10.1.16"
+  severity: 🟠 high
+  cve: CVE-2023-46589
+  description: HTTP request smuggling via malformed trailer headers
+  fix: Upgrade to tomcat>=9.0.83 or >=10.1.16
+
+- package: ch.qos.logback:logback-core
+  affected: "<1.2.13 || >=1.3,<1.3.14 || >=1.4,<1.4.14"
+  severity: 🟠 high
+  cve: CVE-2023-6378
+  description: DoS via crafted serialized data
+  fix: Upgrade to logback>=1.2.13 or >=1.3.14 or >=1.4.14
+
+- package: org.xerial.snappy:snappy-java
+  affected: "<1.1.10.1"
+  severity: 🟠 high
+  cve: CVE-2023-34455
+  description: DoS via decompression of crafted input (OOM)
+  fix: Upgrade to snappy-java>=1.1.10.1

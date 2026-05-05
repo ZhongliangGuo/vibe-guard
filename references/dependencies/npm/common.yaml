@@ -1,0 +1,133 @@
+# npm — Common Package Advisories
+
+- package: lodash
+  affected: "<4.17.21"
+  severity: 🔴 critical
+  cve: CVE-2021-23337
+  description: Command injection via template function
+  fix: Upgrade to lodash>=4.17.21
+
+- package: lodash
+  affected: "<4.17.20"
+  severity: 🟠 high
+  cve: CVE-2020-8203
+  description: Prototype pollution via zipObjectDeep
+  fix: Upgrade to lodash>=4.17.20
+
+- package: express
+  affected: "<4.19.2"
+  severity: 🟡 medium
+  cve: CVE-2024-29041
+  description: Open redirect via malformed URL handling
+  fix: Upgrade to express>=4.19.2
+
+- package: jsonwebtoken
+  affected: "<9.0.0"
+  severity: 🟠 high
+  cve: CVE-2022-23529
+  description: Arbitrary code execution via crafted key objects
+  fix: Upgrade to jsonwebtoken>=9.0.0
+
+- package: axios
+  affected: "<1.6.3"
+  severity: 🟠 high
+  cve: CVE-2023-45857
+  description: CSRF via XSRF-TOKEN cookie exposure to third parties
+  fix: Upgrade to axios>=1.6.3
+
+- package: shell-quote
+  affected: "<1.7.3"
+  severity: 🔴 critical
+  cve: CVE-2021-42740
+  description: Command injection via improper escaping
+  fix: Upgrade to shell-quote>=1.7.3
+
+- package: minimist
+  affected: "<1.2.6"
+  severity: 🟠 high
+  cve: CVE-2021-44906
+  description: Prototype pollution via constructor
+  fix: Upgrade to minimist>=1.2.6
+
+- package: node-fetch
+  affected: "<2.6.7 || >=3.0.0,<3.1.1"
+  severity: 🟠 high
+  cve: CVE-2022-0235
+  description: Exposure of sensitive headers on cross-origin redirect
+  fix: Upgrade to node-fetch>=2.6.7 or >=3.1.1
+
+- package: qs
+  affected: "<6.10.3"
+  severity: 🟠 high
+  cve: CVE-2022-24999
+  description: Prototype pollution via crafted query string
+  fix: Upgrade to qs>=6.10.3
+
+- package: semver
+  affected: "<7.5.2"
+  severity: 🟡 medium
+  cve: CVE-2022-25883
+  description: ReDoS via crafted version strings
+  fix: Upgrade to semver>=7.5.2
+
+- package: tar
+  affected: "<6.2.1"
+  severity: 🟠 high
+  cve: CVE-2024-28863
+  description: DoS via crafted tar files
+  fix: Upgrade to tar>=6.2.1
+
+- package: next
+  affected: "<14.1.1"
+  severity: 🟠 high
+  cve: CVE-2024-34350
+  description: SSRF via Host header manipulation in Server Actions
+  fix: Upgrade to next>=14.1.1
+
+- package: next
+  affected: "<13.5.1"
+  severity: 🟠 high
+  cve: CVE-2023-46298
+  description: DoS via crafted request to middleware
+  fix: Upgrade to next>=13.5.1
+
+- package: vm2
+  affected: "<=3.9.19"
+  severity: 🔴 critical
+  cve: CVE-2023-37466
+  description: Sandbox escape — arbitrary code execution. PACKAGE DEPRECATED.
+  fix: "Do not use vm2 — it is abandoned. Migrate to isolated-vm or vm2 alternatives."
+
+- package: flat
+  affected: "<5.0.1"
+  severity: 🟠 high
+  cve: CVE-2020-36632
+  description: Prototype pollution via unflatten
+  fix: Upgrade to flat>=5.0.1
+
+- package: passport
+  affected: "<0.6.0"
+  severity: 🟡 medium
+  cve: CVE-2022-25896
+  description: Session fixation vulnerability
+  fix: Upgrade to passport>=0.6.0
+
+- package: glob-parent
+  affected: "<5.1.2"
+  severity: 🟠 high
+  cve: CVE-2020-28469
+  description: ReDoS via crafted glob patterns
+  fix: Upgrade to glob-parent>=5.1.2
+
+# Typosquatting — Known Malicious Packages (flag immediately)
+
+These package names are known typosquats. Any usage should be flagged as 🔴 Critical:
+
+- crossenv (typosquat of cross-env)
+- event-stream@3.3.6 (compromised version with crypto-stealing payload)
+- colors@1.4.1 (sabotaged by maintainer)
+- faker@6.6.6 (sabotaged by maintainer)
+- ua-parser-js@0.7.29 (compromised — crypto miner)
+- coa@2.0.3 (compromised)
+- rc@1.2.9 (compromised)
+- node-ipc@10.1.1+ (protestware — overwrites files)

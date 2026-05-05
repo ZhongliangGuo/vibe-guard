@@ -1,0 +1,132 @@
+# PyPI — Common Package Advisories
+
+# Format: Each entry lists package, affected versions, severity, CVE (if assigned),
+# description, and recommended fix. Version ranges use pip-style specifiers.
+
+- package: flask
+  affected: "<2.3.2"
+  severity: 🟠 high
+  cve: CVE-2023-30861
+  description: Session cookie set without Vary header, enabling caching of authenticated responses
+  fix: Upgrade to flask>=2.3.2
+
+- package: django
+  affected: ">=4.0,<4.1.13 || >=4.2,<4.2.7"
+  severity: 🟠 high
+  cve: CVE-2023-46695
+  description: DoS via large passwords in PBKDF2 hasher
+  fix: Upgrade to django>=4.1.13 or django>=4.2.7
+
+- package: django
+  affected: "<3.2.25 || >=4.0,<4.2.15 || >=5.0,<5.0.8"
+  severity: 🟠 high
+  cve: CVE-2024-45231
+  description: Password reset token leakage via headers
+  fix: Upgrade to patched versions
+
+- package: requests
+  affected: "<2.32.0"
+  severity: 🟡 medium
+  cve: CVE-2024-35195
+  description: Session cookies leak on cross-origin redirects
+  fix: Upgrade to requests>=2.32.0
+
+- package: urllib3
+  affected: "<1.26.18 || >=2.0,<2.0.7"
+  severity: 🟡 medium
+  cve: CVE-2023-45803
+  description: Request body not stripped on cross-origin redirects
+  fix: Upgrade to urllib3>=1.26.18 or urllib3>=2.0.7
+
+- package: pyyaml
+  affected: "<6.0"
+  severity: 🔴 critical
+  cve: CVE-2020-14343
+  description: "yaml.load() executes arbitrary Python code without SafeLoader"
+  fix: Upgrade to pyyaml>=6.0, always use yaml.safe_load() or Loader=SafeLoader
+
+- package: pillow
+  affected: "<10.0.1"
+  severity: 🟠 high
+  cve: CVE-2023-44271
+  description: DoS via crafted images exceeding decompression limits
+  fix: Upgrade to pillow>=10.0.1
+
+- package: jinja2
+  affected: "<3.1.3"
+  severity: 🟠 high
+  cve: CVE-2024-22195
+  description: XSS in xmlattr filter with crafted attribute keys
+  fix: Upgrade to jinja2>=3.1.3
+
+- package: cryptography
+  affected: "<41.0.6"
+  severity: 🟠 high
+  cve: CVE-2023-49083
+  description: NULL pointer dereference parsing PKCS7 certificates
+  fix: Upgrade to cryptography>=41.0.6
+
+- package: paramiko
+  affected: "<3.4.0"
+  severity: 🟡 medium
+  cve: CVE-2023-48795
+  description: "Terrapin attack: SSH prefix truncation"
+  fix: Upgrade to paramiko>=3.4.0
+
+- package: setuptools
+  affected: "<70.0"
+  severity: 🟡 medium
+  cve: CVE-2024-6345
+  description: RCE via download functions in package_index
+  fix: Upgrade to setuptools>=70.0
+
+- package: aiohttp
+  affected: "<3.9.2"
+  severity: 🟠 high
+  cve: CVE-2024-23334
+  description: Path traversal in static file serving
+  fix: Upgrade to aiohttp>=3.9.2
+
+- package: werkzeug
+  affected: "<3.0.3"
+  severity: 🟠 high
+  cve: CVE-2024-34069
+  description: Debugger RCE possible without PIN in certain configurations
+  fix: Upgrade to werkzeug>=3.0.3, never use debugger in production
+
+# ML/AI Stack
+
+- package: torch
+  affected: "<2.2.0"
+  severity: 🟠 high
+  cve: N/A
+  description: torch.load() uses pickle by default — arbitrary code execution from untrusted model files
+  fix: "Use torch.load(f, weights_only=True) or upgrade to >=2.2.0 where weights_only defaults to True"
+
+- package: transformers
+  affected: "<4.36.0"
+  severity: 🟠 high
+  cve: N/A
+  description: Arbitrary code execution via trust_remote_code=True with untrusted models
+  fix: Never use trust_remote_code=True with untrusted sources. Upgrade to >=4.36.0 for better sandboxing.
+
+- package: numpy
+  affected: "<1.22.0"
+  severity: 🟡 medium
+  cve: CVE-2021-41496
+  description: Buffer overflow in array operations
+  fix: Upgrade to numpy>=1.22.0
+
+- package: tensorflow
+  affected: "<2.14.0"
+  severity: 🟠 high
+  cve: Multiple
+  description: Multiple RCE and DoS via crafted models and inputs
+  fix: Upgrade to tensorflow>=2.14.0
+
+- package: gradio
+  affected: "<4.20.0"
+  severity: 🔴 critical
+  cve: CVE-2024-1561
+  description: Path traversal allowing arbitrary file read
+  fix: Upgrade to gradio>=4.20.0
